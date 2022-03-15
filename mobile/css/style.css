@@ -1,0 +1,96 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+body{background: yellowgreen;}
+#wrap{width: 1200px; margin: 50px auto; background: #fff; padding: 30px;}
+.container{display: flex; background: whitesmoke; margin: 20px 0;}
+/* 플렉스는 부모한테 가서 가로로 배열된다. */
+.item{width: 50px; height: 50px;}
+.item1{background: rgb(243, 145, 89);}
+.item2{background: rgb(228, 224, 29);}
+.item3{background: rgb(31, 245, 102);}
+.item4{background: rgb(130, 207, 238);}
+.item5{background: rgb(195, 130, 238);}
+.ex1{/* flex-direction: row; */ width: 100%;/*  flex-wrap: wrap; */ flex-flow: row wrap}
+/* 왼쪽 정렬이었던 것이 오른쪽으로 가버림 기본은 row*/
+/* flex-direction: column으로 하면 세로로 떨어짐 reverse를 붙이면 거꾸로 정렬된다;
+flex-wrap: wrap;을 하면 반응형 때 밑으로 떨어지며 정렬된다 안하고싶으면 노랩!
+flex-flow은 플렉스 디렉션과 플렉스랩:랩을 둘다 쓸 수 있다.*/
+.ex1 .item{width: 300px; height: 50px;}
+.ex2{justify-content: left;}
+.ex2{justify-content: center;}
+.ex2{justify-content: right;}
+.ex2{justify-content: flex-start;}
+.ex2{justify-content: flex-end;}
+.ex2{justify-content: space-between;}/* 앞과 뒤에 비율없이 여백을 만들어줌 가장 많이 쓴다. 11,12버전에도 나옴 */
+/* -ms-space-between; 11,12버전에서 쓸때*/
+.ex2{justify-content: space-around;}/* 앞과 뒤에 비율있이 여백을 만들어줌 */
+.ex2{justify-content: space-evenly;}/**/
+
+.ex4{height: auto; align-items: center; align-content: space-between; /* flex-wrap: wrap; */ flex-direction: column;}/* baseline 글자를 기준으로 배치한다. */
+.ex4 .item1{background: rgb(243, 145, 89);}
+.ex4 .item2{background: rgb(228, 224, 29);}
+.ex4 .item3{background: rgb(31, 245, 102); padding: 30px;}
+.ex4 .item4{background: rgb(130, 207, 238);}
+.ex4 .item5{background: rgb(195, 130, 238); padding: 20px;}
+
+.ex5 .item1{order:1;}/* 1이 맨뒤로가! */
+.ex5 .item3{order:3;}/* 3이 맨뒤로가! */
+
+.ex6 .item1{flex-grow: 0; flex-shrink: 1; flex-basis: 50%;}
+.ex6 .item1{flex: 1 1 auto;}
+.ex6 .item2{flex-grow: 2; flex-shrink: 1; flex-basis: auto;}
+.ex6 .item2{flex: 1 1 auto;}
+.ex6 .item3{flex-grow: 1; flex-shrink: 1; flex-basis: auto;} 
+.ex6 .item3{flex: 0 1 30%;}
+
+@media screen and(max-width: 1200px;) {
+    #wrap{width: 100%;}
+}
+
+
+/* *{margin: 0; padding: 0;}
+body{background: rgb(167, 216, 255);}
+#wrap{width: 1000px; margin: 50px auto; background: #fff; padding: 30px; box-sizing: border-box;}
+
+.container{display: flex; background: #eee; margin: 20px 0;}
+.item{width: 50px; height: 50px;}
+.item1{background: rgb(243, 145, 89);}
+.item2{background: rgb(228, 224, 29);}
+.item3{background: rgb(31, 245, 102);}
+.item4{background: rgb(130, 207, 238);}
+.item5{background: rgb(195, 130, 238);}
+
+/* .ex1{flex-direction: row; width: 100%; flex-wrap: wrap;} */ /*기본은 row
+.ex1{width: 100%; flex-flow: row wrap;}
+.ex1 .item{width: 300px; height: 50px;}
+
+.ex2{justify-content: left;}
+.ex2{justify-content: center;}
+.ex2{justify-content: right;}
+.ex2{justify-content: flex-start;}
+.ex2{justify-content: flex-end;}
+.ex2{justify-content: space-between;}
+.ex2{justify-content: space-evenly;}
+
+.ex3{height: 300px; align-items: center;}
+
+.ex4{height: 300px; align-content: space-between; flex-wrap: wrap; flex-direction: column;}
+.item1{background: rgb(243, 145, 89);}
+.item2{background: rgb(228, 224, 29);}
+.item3{background: rgb(31, 245, 102);}
+.item4{background: rgb(130, 207, 238);}
+.item5{background: rgb(195, 130, 238);}
+
+.ex5 .item1{order: 1;}
+.ex5 .item3{order: 3;}
+
+/* .ex6 .item1{flex-grow: 0; flex-shrink: 1; flex-basis: 50%;} */
+/* .ex6 .item1{flex: 1 1 auto;} */
+/* .ex6 .item2{flex-grow: 2; flex-shrink: 1; flex-basis: auto;} */
+/* .ex6 .item2{flex: 1 1 auto;} */
+/* .ex6 .item3{flex-grow: 1; flex-shrink: 1; flex-basis: auto;} 
+.ex6 .item3{flex: 0 1 30%;}
+
+@media screen and (max-width: 1200px) {
+    #wrap{width: 100%}
+} */
